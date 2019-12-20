@@ -1,0 +1,52 @@
+version: "3"
+
+networks:
+  user_app_network:
+    driver: bridge
+
+services:
+  nginx:
+    env_file:
+      - .env
+    image: nginx
+    container_name: ${APP_NAME}_nginx
+    ports:
+      - ${HTTP_PORT}:80
+    volumes:
+      - ./:/var/www
+      - ./nginx:/etc/nginx/conf.d
+    working_dir: /var/www
+    networks:
+      - user_app_network
+    links:
+      - web
+#
+#  version: '2'
+#  services:
+  db:
+    image: mysql:lastest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1
+      POSTGRES_DB: myapp
+    ports:
+      - 3306:3306
+    networks:
+      - user_app_network
+
+
+  web:
+    build:
+      context: ./nginx
+      args:
+        - PHP_VERSION=${PHP_VERSION}
+    env_file:
+      - .env
+    container_name: ${APP_NAME}_web
+    volumes:
+      - ./:/var/www
+    working_dir: /var/www
+    networks:
+      - user_app_network
+    links:
+      - db
