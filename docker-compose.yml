@@ -20,15 +20,16 @@ services:
       - user_app_network
     links:
       - web
-#
-#  version: '2'
-#  services:
+  #
+  #  version: '2'
+  #  services:
   db:
-    image: mysql:lastest
+    image: mysql:5.7
+    env_file:
+      - .env
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: 1
-      POSTGRES_DB: myapp
+      MYSQL_DATABASE: myapp
+      MYSQL_ROOT_PASSWORD: root
     ports:
       - 3306:3306
     networks:
