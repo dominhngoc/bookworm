@@ -10,9 +10,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 -- ---------------------------------------------------------
 
-
+SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicdoe_ci';
 -- CREATE TABLE "address" --------------------------------------
-CREATE TABLE `address` ( 
+CREATE TABLE `address` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`name` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`address` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
@@ -30,7 +30,7 @@ AUTO_INCREMENT = 9;
 
 
 -- CREATE TABLE "admin" ----------------------------------------
-CREATE TABLE `admin` ( 
+CREATE TABLE `admin` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`name` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`username` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -50,7 +50,7 @@ AUTO_INCREMENT = 4;
 
 
 -- CREATE TABLE "bill_details" ---------------------------------
-CREATE TABLE `bill_details` ( 
+CREATE TABLE `bill_details` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`price` Double( 22, 0 ) NOT NULL,
 	`buyPrice` Double( 22, 0 ) NOT NULL,
@@ -68,7 +68,7 @@ AUTO_INCREMENT = 75;
 
 
 -- CREATE TABLE "bills" ----------------------------------------
-CREATE TABLE `bills` ( 
+CREATE TABLE `bills` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`note` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`status` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -88,7 +88,7 @@ AUTO_INCREMENT = 62;
 
 
 -- CREATE TABLE "book" -----------------------------------------
-CREATE TABLE `book` ( 
+CREATE TABLE `book` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`name` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`author` VarChar( 100 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -116,7 +116,7 @@ AUTO_INCREMENT = 30;
 
 
 -- CREATE TABLE "books_link" -----------------------------------
-CREATE TABLE `books_link` ( 
+CREATE TABLE `books_link` (
 	`id` Int( 11 ) AUTO_INCREMENT NOT NULL,
 	`name` VarChar( 255 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
 	`typeName` VarChar( 255 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
@@ -131,7 +131,7 @@ AUTO_INCREMENT = 4;
 
 
 -- CREATE TABLE "category" -------------------------------------
-CREATE TABLE `category` ( 
+CREATE TABLE `category` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`logo` Text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`name` VarChar( 100 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -148,7 +148,7 @@ AUTO_INCREMENT = 4;
 
 
 -- CREATE TABLE "dcategory" ------------------------------------
-CREATE TABLE `dcategory` ( 
+CREATE TABLE `dcategory` (
 	`id` Int( 255 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`name` VarChar( 255 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
 	`bookNumber` Int( 255 ) NOT NULL,
@@ -162,7 +162,7 @@ AUTO_INCREMENT = 22;
 
 
 -- CREATE TABLE "defaultkey" -----------------------------------
-CREATE TABLE `defaultkey` ( 
+CREATE TABLE `defaultkey` (
 	`id` Int( 11 ) AUTO_INCREMENT NOT NULL,
 	`id_type` Int( 11 ) NOT NULL,
 	`value` Int( 11 ) NOT NULL,
@@ -176,7 +176,7 @@ AUTO_INCREMENT = 2;
 
 
 -- CREATE TABLE "infor" ----------------------------------------
-CREATE TABLE `infor` ( 
+CREATE TABLE `infor` (
 	`id` Int( 255 ) AUTO_INCREMENT NOT NULL,
 	`name` VarChar( 255 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NULL,
 	`birthday` Date NOT NULL,
@@ -194,7 +194,7 @@ AUTO_INCREMENT = 3;
 
 
 -- CREATE TABLE "migrations" -----------------------------------
-CREATE TABLE `migrations` ( 
+CREATE TABLE `migrations` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`migration` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`batch` Int( 11 ) NOT NULL,
@@ -207,7 +207,7 @@ AUTO_INCREMENT = 127;
 
 
 -- CREATE TABLE "password_resets" ------------------------------
-CREATE TABLE `password_resets` ( 
+CREATE TABLE `password_resets` (
 	`email` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`token` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`created_at` Timestamp NULL )
@@ -218,7 +218,7 @@ ENGINE = InnoDB;
 
 
 -- CREATE TABLE "price" ----------------------------------------
-CREATE TABLE `price` ( 
+CREATE TABLE `price` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`buyPrice` Double( 8, 2 ) NOT NULL,
 	`sellPrice` Double( 8, 2 ) NOT NULL,
@@ -233,7 +233,7 @@ AUTO_INCREMENT = 30;
 
 
 -- CREATE TABLE "promotion" ------------------------------------
-CREATE TABLE `promotion` ( 
+CREATE TABLE `promotion` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`banner` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`name` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -248,7 +248,7 @@ AUTO_INCREMENT = 1;
 
 
 -- CREATE TABLE "rank" -----------------------------------------
-CREATE TABLE `rank` ( 
+CREATE TABLE `rank` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`view` Int( 11 ) NOT NULL,
 	`downloads` Int( 11 ) NOT NULL,
@@ -262,7 +262,7 @@ AUTO_INCREMENT = 2;
 
 
 -- CREATE TABLE "sale" -----------------------------------------
-CREATE TABLE `sale` ( 
+CREATE TABLE `sale` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`salePrice` Double( 8, 2 ) NOT NULL,
 	`saleName` VarChar( 100 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -278,7 +278,7 @@ AUTO_INCREMENT = 10;
 
 
 -- CREATE TABLE "shipper" --------------------------------------
-CREATE TABLE `shipper` ( 
+CREATE TABLE `shipper` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`name` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
 	`email` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
@@ -298,7 +298,7 @@ AUTO_INCREMENT = 3;
 
 
 -- CREATE TABLE "test" -----------------------------------------
-CREATE TABLE `test` ( 
+CREATE TABLE `test` (
 	`id` Int( 255 ) AUTO_INCREMENT NOT NULL,
 	`id_loai` Int( 255 ) NOT NULL,
 	PRIMARY KEY ( `id` ) )
@@ -310,7 +310,7 @@ AUTO_INCREMENT = 1;
 
 
 -- CREATE TABLE "user" -----------------------------------------
-CREATE TABLE `user` ( 
+CREATE TABLE `user` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`email` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`password` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -326,7 +326,7 @@ AUTO_INCREMENT = 5;
 
 
 -- CREATE TABLE "users" ----------------------------------------
-CREATE TABLE `users` ( 
+CREATE TABLE `users` (
 	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
 	`name` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
 	`email` VarChar( 191 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -345,7 +345,7 @@ AUTO_INCREMENT = 4;
 
 
 -- Dump data of "address" ----------------------------------
-INSERT INTO `address`(`id`,`name`,`address`,`phoneNumber`,`province`,`id_user`,`created_at`,`updated_at`) VALUES 
+INSERT INTO `address`(`id`,`name`,`address`,`phoneNumber`,`province`,`id_user`,`created_at`,`updated_at`) VALUES
 ( '1', 'ngoc', '52 tran hung dao', '984321412', 'Hồ Chí Minh', '2', NULL, '2019-01-31 09:26:52' ),
 ( '2', 'Nguyễn viết dũng', 'thôn dương đá xã dương xá gia lâm hà nội', '0988427190', 'Hà nội', '2', NULL, NULL ),
 ( '3', 'ngoc', '52 tran hung dao', '984321412', 'Hồ Chí Minh', '2', '2019-01-31 08:44:05', '2019-01-31 08:44:05' ),
@@ -358,14 +358,14 @@ INSERT INTO `address`(`id`,`name`,`address`,`phoneNumber`,`province`,`id_user`,`
 
 
 -- Dump data of "admin" ------------------------------------
-INSERT INTO `admin`(`id`,`name`,`username`,`email`,`password`,`level`,`remember_token`,`created_at`,`updated_at`) VALUES 
+INSERT INTO `admin`(`id`,`name`,`username`,`email`,`password`,`level`,`remember_token`,`created_at`,`updated_at`) VALUES
 ( '1', 'ngoc', 'ngoc', 'ngoc', 'ngoc', '1', NULL, NULL, NULL ),
 ( '3', 'ngoc', 'ngoc1995', 'ngoc', 'ngoc', '1', NULL, NULL, NULL );
 -- ---------------------------------------------------------
 
 
 -- Dump data of "bill_details" -----------------------------
-INSERT INTO `bill_details`(`id`,`price`,`buyPrice`,`quantity`,`id_bill`,`total`,`profit`,`bookName`) VALUES 
+INSERT INTO `bill_details`(`id`,`price`,`buyPrice`,`quantity`,`id_bill`,`total`,`profit`,`bookName`) VALUES
 ( '2', '25000', '15000', '2', '2', '50000', '0', 'Kẻ trộm sách' ),
 ( '3', '25000', '0', '1', '2', '35000', '0', 'Thép đã tôi thế đấy' ),
 ( '4', '0', '0', '2', '11', '0', '0', 'The clean coder' ),
@@ -443,7 +443,7 @@ INSERT INTO `bill_details`(`id`,`price`,`buyPrice`,`quantity`,`id_bill`,`total`,
 
 
 -- Dump data of "bills" ------------------------------------
-INSERT INTO `bills`(`id`,`note`,`status`,`id_user`,`id_shipper`,`created_at`,`updated_at`,`total`,`profit`,`id_address`) VALUES 
+INSERT INTO `bills`(`id`,`note`,`status`,`id_user`,`id_shipper`,`created_at`,`updated_at`,`total`,`profit`,`id_address`) VALUES
 ( '2', 'giao truoc 8h', 'success', '3', '2', NULL, '2019-03-09 07:07:02', '50000', '10000', '1' ),
 ( '11', 'giao truoc 12h', 'Pendding', '2', '0', '2019-01-30 17:04:16', '2019-01-30 17:04:16', '0', '0', '1' ),
 ( '12', 'giao truoc 12h', 'Pendding', '2', '0', '2019-01-30 17:05:47', '2019-01-30 17:05:47', '0', '0', '1' ),
@@ -495,7 +495,7 @@ INSERT INTO `bills`(`id`,`note`,`status`,`id_user`,`id_shipper`,`created_at`,`up
 
 
 -- Dump data of "book" -------------------------------------
-INSERT INTO `book`(`id`,`name`,`author`,`pageNumber`,`weight`,`size`,`image`,`description`,`downloads`,`language`,`type`,`wordWise`,`id_price`,`id_category`,`id_sale`,`publicDate`,`created_at`,`updated_at`) VALUES 
+INSERT INTO `book`(`id`,`name`,`author`,`pageNumber`,`weight`,`size`,`image`,`description`,`downloads`,`language`,`type`,`wordWise`,`id_price`,`id_category`,`id_sale`,`publicDate`,`created_at`,`updated_at`) VALUES
 ( '1', 'The clean coder', 'Robert C.Martin Series', '200', '50', '20*50', '5154eSTKUxL._SX382_BO1,204,203,200_.jpg', '<p>In&nbsp;<em><strong>The Clean Coder: A Code of Conduct for Professional Programmers,</strong>&nbsp;</em>legendary software expert Robert C. Martin introduces the disciplines, techniques, tools, and practices of true software craftsmanship. This book is packed with practical advice&ndash;about everything from estimating and coding to refactoring and testing. It covers much more than technique: It is about attitude. Martin shows how to approach software development with honor, self-respect, and pride; work well and work clean; communicate and estimate faithfully; face difficult decisions with clarity and honesty; and understand that deep knowledge comes with a responsibility to act.</p>', '0', 'Tiếng việt', '0', '0', '1', '1', '1', '0000-00-00', NULL, '2019-01-30 06:00:22' ),
 ( '2', 'Code completef', 'Steve McConnell', '255', '25', '22', '51FUYfErOXL._SX408_BO1,204,203,200_.jpg', '<p>good</p>', '0', 'Tiếng anh', '0', '0', '2', '1', '1', '0000-00-00', '2018-12-23 22:52:15', '2018-12-30 18:26:27' ),
 ( '3', 'Onpiece chap 85', 'orda', '255', '25', '22', 'op85.jpg', '<p>fafa</p>', '0', 'Tiếng việt', '1', '1', '3', '1', '1', '0000-00-00', '2018-12-23 22:54:23', '2018-12-23 22:54:23' ),
@@ -528,7 +528,7 @@ INSERT INTO `book`(`id`,`name`,`author`,`pageNumber`,`weight`,`size`,`image`,`de
 
 
 -- Dump data of "books_link" -------------------------------
-INSERT INTO `books_link`(`id`,`name`,`typeName`,`link`,`id_book`) VALUES 
+INSERT INTO `books_link`(`id`,`name`,`typeName`,`link`,`id_book`) VALUES
 ( '1', 'bo gia', 'epub', 'Sachvui.Com-bo-gia.epub', '27' ),
 ( '2', 'bo gia', 'mobi
 ', 'Sachvui.Com-bo-gia.mobi
@@ -539,14 +539,14 @@ INSERT INTO `books_link`(`id`,`name`,`typeName`,`link`,`id_book`) VALUES
 
 
 -- Dump data of "category" ---------------------------------
-INSERT INTO `category`(`id`,`logo`,`name`,`bookNumber`,`created_at`,`updated_at`,`id_loai`) VALUES 
+INSERT INTO `category`(`id`,`logo`,`name`,`bookNumber`,`created_at`,`updated_at`,`id_loai`) VALUES
 ( '1', '<i class="fab fa-acquisitions-incorporated"></i>', 'Làm giàu', '28', NULL, '2019-12-20 11:26:45', '1' ),
 ( '3', '<i class="fas fa-book-dead"></i>', 'Giao tiếp', '0', '2019-01-05 13:02:08', '2019-12-20 11:26:45', '1' );
 -- ---------------------------------------------------------
 
 
 -- Dump data of "dcategory" --------------------------------
-INSERT INTO `dcategory`(`id`,`name`,`bookNumber`,`logo`) VALUES 
+INSERT INTO `dcategory`(`id`,`name`,`bookNumber`,`logo`) VALUES
 ( '1', 'Tâm lý và kỹ năng', '0', '<i class="fab fa-accusoft"></i>' ),
 ( '6', 'Tiểu thuyết', '0', '<i class="fab fa-wolf-pack-battalion"></i>' ),
 ( '11', 'Truyện tranh', '0', '<i class="fas fa-anchor"></i>' ),
@@ -562,20 +562,20 @@ INSERT INTO `dcategory`(`id`,`name`,`bookNumber`,`logo`) VALUES
 
 
 -- Dump data of "defaultkey" -------------------------------
-INSERT INTO `defaultkey`(`id`,`id_type`,`value`,`id_user`) VALUES 
+INSERT INTO `defaultkey`(`id`,`id_type`,`value`,`id_user`) VALUES
 ( '1', '1', '1', '2' );
 -- ---------------------------------------------------------
 
 
 -- Dump data of "infor" ------------------------------------
-INSERT INTO `infor`(`id`,`name`,`birthday`,`gender`,`phoneNumber`,`email`,`logo`,`id_user`) VALUES 
+INSERT INTO `infor`(`id`,`name`,`birthday`,`gender`,`phoneNumber`,`email`,`logo`,`id_user`) VALUES
 ( '1', 'ngoc', '0000-00-00', 'man', '0988929018', 'dominhngoc1995hy@gmail.com', 'no', '2' ),
 ( '2', 'do minh ngoc', '2019-02-13', 'man', '0988929018', 'dominhngoc1995hy@gmail.com', 'no', '4' );
 -- ---------------------------------------------------------
 
 
 -- Dump data of "migrations" -------------------------------
-INSERT INTO `migrations`(`id`,`migration`,`batch`) VALUES 
+INSERT INTO `migrations`(`id`,`migration`,`batch`) VALUES
 ( '112', '2014_10_12_000000_create_users_table', '1' ),
 ( '113', '2014_10_12_100000_create_password_resets_table', '1' ),
 ( '114', '2018_12_19_051621_create_sale', '1' ),
@@ -599,7 +599,7 @@ INSERT INTO `migrations`(`id`,`migration`,`batch`) VALUES
 
 
 -- Dump data of "price" ------------------------------------
-INSERT INTO `price`(`id`,`buyPrice`,`sellPrice`,`created_at`,`updated_at`) VALUES 
+INSERT INTO `price`(`id`,`buyPrice`,`sellPrice`,`created_at`,`updated_at`) VALUES
 ( '1', '15000.00', '20000.00', NULL, NULL ),
 ( '2', '31431.00', '13414.00', '2018-12-23 22:52:15', '2018-12-23 22:52:15' ),
 ( '3', '31431.00', '13414.00', '2018-12-23 22:54:23', '2018-12-23 22:54:23' ),
@@ -637,13 +637,13 @@ INSERT INTO `price`(`id`,`buyPrice`,`sellPrice`,`created_at`,`updated_at`) VALUE
 
 
 -- Dump data of "rank" -------------------------------------
-INSERT INTO `rank`(`id`,`view`,`downloads`,`comments`) VALUES 
+INSERT INTO `rank`(`id`,`view`,`downloads`,`comments`) VALUES
 ( '1', '1', '1', '1' );
 -- ---------------------------------------------------------
 
 
 -- Dump data of "sale" -------------------------------------
-INSERT INTO `sale`(`id`,`salePrice`,`saleName`,`created_at`,`updated_at`,`categorySale`) VALUES 
+INSERT INTO `sale`(`id`,`salePrice`,`saleName`,`created_at`,`updated_at`,`categorySale`) VALUES
 ( '1', '0.00', 'normal', NULL, NULL, '' ),
 ( '6', '135.00', 'hay', '2018-12-23 10:42:41', '2018-12-23 10:42:41', 'Self-Helf' ),
 ( '7', '135.00', 'hay', '2018-12-23 10:43:38', '2018-12-23 10:43:38', 'Self-Helf' ),
@@ -653,7 +653,7 @@ INSERT INTO `sale`(`id`,`salePrice`,`saleName`,`created_at`,`updated_at`,`catego
 
 
 -- Dump data of "shipper" ----------------------------------
-INSERT INTO `shipper`(`id`,`name`,`email`,`password`,`cmnd`,`licensePlate`,`phoneNumber`,`remember_token`,`created_at`,`updated_at`) VALUES 
+INSERT INTO `shipper`(`id`,`name`,`email`,`password`,`cmnd`,`licensePlate`,`phoneNumber`,`remember_token`,`created_at`,`updated_at`) VALUES
 ( '1', 'Do Minh Ngoc', 'man', 'ngoc1995', '013481133', 'h5-n1', '0988929018', NULL, NULL, NULL ),
 ( '2', 'afsda', 'fasfa', 'faf', 'ff', 'asfs', 'fasf', NULL, NULL, NULL );
 -- ---------------------------------------------------------
@@ -664,7 +664,7 @@ INSERT INTO `shipper`(`id`,`name`,`email`,`password`,`cmnd`,`licensePlate`,`phon
 
 
 -- Dump data of "user" -------------------------------------
-INSERT INTO `user`(`id`,`email`,`password`,`remember_token`,`created_at`,`updated_at`) VALUES 
+INSERT INTO `user`(`id`,`email`,`password`,`remember_token`,`created_at`,`updated_at`) VALUES
 ( '2', 'dominhngoc1995@gmail.com', '1', NULL, NULL, NULL ),
 ( '3', 'man', 'ngoc1995', NULL, NULL, NULL ),
 ( '4', 'ngoc', 'ngoc', NULL, NULL, NULL );
@@ -672,7 +672,7 @@ INSERT INTO `user`(`id`,`email`,`password`,`remember_token`,`created_at`,`update
 
 
 -- Dump data of "users" ------------------------------------
-INSERT INTO `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`remember_token`,`created_at`,`updated_at`) VALUES 
+INSERT INTO `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`remember_token`,`created_at`,`updated_at`) VALUES
 ( '1', 'ngoc', 'dominhngoc1995@gmail.com', NULL, '1', NULL, NULL, NULL ),
 ( '2', 'ngoc', '', NULL, '1', NULL, NULL, NULL ),
 ( '3', 'ngoc', 'ngoc', NULL, 'ngoc', NULL, NULL, NULL );
